@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+
+                    <StackLayout Grid.Row="0" HeightRequest="10" HorizontalOptions="Center"  >
+                        <Image Source="ej1"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" HeightRequest="30" Margin="15">
+                        <Label Text="Login" TextColor="White"
+                               FontSize="30" FontAttributes="Bold"
+                               />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2" Margin="10" HeightRequest="400" Spacing="20"  >
+                        <Frame HeightRequest="290" CornerRadius="20" Margin="40" HasShadow="True"  >
+                            <StackLayout VerticalOptions="Center" Spacing="
+                                         40" >
+
+                                <StackLayout Spacing="0">
+                                    <Label Text="Enter your Details" HorizontalOptions="Center"
+                                       FontSize="20" TextColor="Black" FontAttributes="Bold"/>
+                                </StackLayout>
+
+
+                                <StackLayout Spacing="18">
+                                    <Entry Placeholder="Email Address" TextColor="Gray" 
+                                           Text="{Binding Email, Mode=TwoWay}"/>
+                                    <Entry Placeholder="Password" TextColor="DimGray" IsPassword="True"
+                                           Text="{Binding Contraseña, Mode=TwoWay}"/>
+
+                                </StackLayout>
+
+
+                                <StackLayout HeightRequest="100" Spacing="0" HorizontalOptions="Center" >
+                                    <Button x:Name="BtnLogin" Text="Login" TextColor="White" FontSize="16" FontAttributes="Bold" WidthRequest="200"
+                                            BorderRadius="40" BackgroundColor="#101657" Command="{Binding commandLogin}"/>
+                                </StackLayout>
+
+
+
+
+
+
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4" HeightRequest="90">
+                        <Label Text="Dont have an account.?"
+                               TextColor="Gray"
+                               FontSize="16"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"/>
+
+                        <StackLayout  >
+                            <Button x:Name="BtnIrRegistro" Text="Register" TextColor="#101657" HeightRequest="50" WidthRequest="100"
+                                    FontAttributes="Bold" FontSize="14" HorizontalOptions="Center" BackgroundColor="White" Clicked="IraRegister"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
